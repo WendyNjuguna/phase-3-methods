@@ -34,4 +34,4 @@ def halve(num)
    num /2
 end 
 
-halve = halve (6)
+halve = halve (6/2)
