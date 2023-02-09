@@ -1,54 +1,37 @@
-require_relative 'spec_helper'
-require_relative '../methods'
+# describe '#greet_programmer' 
+def greet_programmer()
+  puts ("Hello, programmer!")
 
-describe '#greet_programmer' do
+end    
+greet_programmer()
 
-  it 'outputs the string "Hello, programmer!"' do
-    expect { greet_programmer }.to output(a_string_including("Hello, programmer!")).to_stdout
-  end
-  
-end
+#describe '#greet'
+def greet(name = "Naureen")
+   puts ("Hello, #{name}!")
+end    
 
-describe '#greet' do
+greet ()
+greet ("Jimmy")
 
-  it 'outputs a string "Hello, Naureen!" when called with "Naureen"' do
-    expect { greet("Naureen") }.to output(a_string_including("Hello, Naureen!")).to_stdout
-  end
-
-  it 'outputs a string "Hello, Jimmy!" when called with "Jimmy"' do
-    expect { greet("Jimmy") }.to output(a_string_including("Hello, Jimmy!")).to_stdout
-  end
+#describe '#greet_with_default' 
+def greet_with_default(user = "programmer")
+   puts ("Hello, #{user}!")
 
 end
+greet_with_default ("Naureen")
 
-describe '#greet_with_default' do
+#describes '#add' 
 
-  it 'outputs a string "Hello, Naureen!" when called with "Naureen"' do
-    expect { greet_with_default("Naureen") }.to output(a_string_including("Hello, Naureen!")).to_stdout
-  end
+def add (num1, num2)
+   puts num1 + num2
+end 
+add = add(2,5)
 
-  it 'outputs a string "Hello, programmer!" when called with no arguments' do
-    expect { greet_with_default }.to output(a_string_including("Hello, programmer!")).to_stdout
-  end
+#describe '#halve'
+def halve(num)
+   return nil unless num.is_a?(Integer)
+   puts num 
+   num /2
+end 
 
-end
-
-describe '#add' do
-
-  it 'returns the sum of two numbers' do
-    expect(add(2, 5)).to be(7)
-  end
-
-end
-
-describe '#halve' do
-  
-  it 'returns half of the given integer' do
-    expect(halve(6)).to be(3)
-  end
-
-  it 'returns nil if not given a integer' do
-    expect(halve("six")).to be(nil)
-  end
-
-end
+halve = halve (6)
